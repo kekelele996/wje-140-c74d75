@@ -26,6 +26,6 @@ import { RateLimitMiddleware } from './middlewares/rateLimit.middleware';
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(RequestLoggerMiddleware, AuditLogMiddleware, RateLimitMiddleware).forRoutes('*');
+    consumer.apply(RequestLoggerMiddleware, AuditLogMiddleware, RateLimitMiddleware).forRoutes('{*path}');
   }
 }
